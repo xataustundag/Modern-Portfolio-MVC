@@ -1,0 +1,1 @@
+Burada Entity'ler yer almakta. Entityler sayesinde uygulamamiz backend ile SQL server arasinda rahatca iletisime gecebilecek. Bir sayfayi inceledigimizde o sayfadaki baslik, resim, paragraf, description vs. gibi ozellikleri biz backend diline dokuyoruz. 

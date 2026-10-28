@@ -1,0 +1,18 @@
+version: '3.8' # Docker Compose dosyasinin versiyonu
+
+services:  # Burada servisler tanimlanacak.
+  postgres:
+    image: postgres:16-alpine # Postgres 16 versiyonunun alpine tabanli imaji
+    container_name: Modernportfolio_db # Postgres konteynerinin ismi
+    environment: # Postgres konteynerinin ortam degiskenleri
+      POSTGRES_USER: demo_user # Postgres konteynerinin kullanici adi
+      POSTGRES_PASSWORD: demo_password # Postgres konteynerinin kullanici sifresi
+      POSTGRES_DB: modernportfolio # Postgres konteynerinin veritabani adi
+    ports:
+      - "5430:5432" # Ben benim bilgisayarimdaki 5430 portunu Postgres konteynerinin 5432 portuna yonlendiriyorum
+    volumes: # Veri tabani durduruldugunda icindeki veriler kaybolmasin diye bir volume olusturuyorum
+      - postgres_data:/var/lib/postgresql/data # Postgres konteynerinin verilerini saklayacagim volume.
+    restart: unless-stopped # Postgres konteyneri manuel olarak durdurulmadigi surece otomatik olarak yeniden baslatilir.
+
+volumes:
+  postgres_data: # Ben sana bunu verdim ve bunu olustur.

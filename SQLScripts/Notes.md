@@ -1,0 +1,1 @@
+Burada SQL server icin scriptler yer alacak. Tablolari yaratma veya ekleme islemleri gibi islemler bu dosyadaki scriptler sayesinde gelecek.
